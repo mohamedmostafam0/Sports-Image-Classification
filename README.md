@@ -12,14 +12,14 @@ The dataset is sourced from a Kaggle competition and consists of:
 - **Test Set**: Contains images listed in `test.csv` without labels, used for generating predictions.
 
 ### Directory Structure
+```
 mohamedmostafam0-sports-image-classification/
 ├── sport-image-classification-project-deeplearning.ipynb  # Main Jupyter notebook
-├── runs/                                                  # TensorBoard logs
-├── checkpoint_L2_<weight_decay>.pth                       # Model checkpoints
-├── best_model_L2_<weight_decay>.pth                       # Saved model weights
-└── test_predictions.csv                                   # Test set predictions
-
-
+├── runs/                                                 # TensorBoard logs (e.g., 20250502-194329/)
+├── checkpoint_Final_best_model_<weight_decay>.pth         # Model checkpoints (e.g., checkpoint_Final_best_model_0.0.pth)
+├── best_model_L2_<weight_decay>.pth                       # Saved model weights (e.g., best_model_L2_0.0.pth)
+└── test_predictions.csv                                  # Test set predictions
+```
 
 ### Class Distribution in Training Set:
 - Cricket: 1,556 images  
@@ -31,6 +31,23 @@ mohamedmostafam0-sports-image-classification/
 - Karate: 578 images  
 
 ---
+## Setup
+1. Clone the Repository:
+```bash
+git clone https://github.com/mohamedmostafam0/Sports-Image-Classification.git
+cd mohamedmostafam0-sports-image-classification
+```
+2. Prepare the Dataset:
+- Download the dataset from Kaggle: Sports Image Classification Dataset.
+- Place it in the appropriate directory (e.g., /kaggle/input/sports-image-classification/ if running on Kaggle).
+  
+3. Set Up TensorBoard:
+```bash
+tensorboard --logdir runs
+```
+4. Environment:
+- Developed on Kaggle with GPU support.
+- Ensure a CUDA-compatible GPU is available for faster training.
 
 ## Requirements
 To run this project, you need the following dependencies:
@@ -49,28 +66,15 @@ To run this project, you need the following dependencies:
 - Pyngrok *(optional, for TensorBoard tunneling)*
 
 Install dependencies using:
-
 ```bash
 pip install torch torchvision pandas numpy matplotlib seaborn scikit-learn tqdm tensorboard pillow pyngrok
 ```
 
-## Setup
-1. Clone the Repository:
+or you can simply use:
 ```bash
-git clone https://github.com/mohamedmostafam0/Sports-Image-Classification.git
-cd mohamedmostafam0-sports-image-classification
+pip install -r requirements.txt
 ```
-2. Prepare the Dataset:
-- Download the dataset from Kaggle: Sports Image Classification Dataset.
-- Place it in the appropriate directory (e.g., /kaggle/input/sports-image-classification/ if running on Kaggle).
-  
-3. Set Up TensorBoard:
-```bash
-tensorboard --logdir runs
-```
-4. Environment:
-- Developed on Kaggle with GPU support.
-- Ensure a CUDA-compatible GPU is available for faster training.
+
 
   ## Usage
 
